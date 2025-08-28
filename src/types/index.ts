@@ -24,6 +24,34 @@ export interface Vehicle {
   updated_at: string;
 }
 
+export interface MaintenanceRecord {
+  id: string;
+  vehicle_id: string;
+  user_id: string;
+  maintenance_type: string;
+  description?: string;
+  cost: number;
+  odometer_reading: number;
+  due_date?: string;
+  completed_date?: string;
+  is_completed: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface VehicleProblem {
+  id: string;
+  vehicle_id: string;
+  user_id: string;
+  problem_title: string;
+  description?: string;
+  priority: 'low' | 'medium' | 'high' | 'critical';
+  status: 'open' | 'in_progress' | 'resolved' | 'ignored';
+  estimated_cost: number;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface FuelRecord {
   id: string;
   user_id: string;
